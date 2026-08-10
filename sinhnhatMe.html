@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>🌸 Chúc mừng sinh nhật mẹ Ngọc Bé 🌸</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 40%, #f48fb1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+            padding: 16px;
+            margin: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        #fireworkCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        body::before {
+            content: "🌸 🌺 🌷 🌹 🌼 💐 🌻 🌸 🌺 🌷 🌹 🌼 💐 🌻 🌸 🌺";
+            position: fixed;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            font-size: 28px;
+            opacity: 0.08;
+            letter-spacing: 20px;
+            white-space: nowrap;
+            transform: rotate(-5deg);
+            pointer-events: none;
+            animation: floatFlowers 60s linear infinite;
+        }
+
+        @keyframes floatFlowers {
+            0% {
+                transform: translateY(0) rotate(-5deg);
+                opacity: 0.08;
+            }
+            50% {
+                opacity: 0.12;
+            }
+            100% {
+                transform: translateY(100vh) rotate(-5deg);
+                opacity: 0.08;
+            }
+        }
+
+        .card {
+            width: 100%;
+            max-width: 440px;
+            background: linear-gradient(145deg, rgba(255, 248, 250, 0.92), rgba(255, 235, 240, 0.88));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 48px 48px 48px 48px;
+            box-shadow: 0 20px 60px rgba(200, 80, 120, 0.25), 0 8px 24px rgba(200, 80, 120, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            padding: 28px 20px 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 220, 230, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #f06292, #ec407a, #f06292, #f8bbd0);
+            background-size: 300% 300%;
+            z-index: -1;
+            animation: borderGlow 4s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes borderGlow {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .card::after {
+            content: "🌸 🌺 🌷 🌹 🌼";
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            font-size: 80px;
+            opacity: 0.06;
+            white-space: nowrap;
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+
+        .lock-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 248, 250, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 30px;
+            z-index: 999;
+            border: 2px solid rgba(200, 80, 120, 0.15);
+            transition: all 0.5s ease;
+        }
+
+        .lock-overlay .lock-icon {
+            font-size: 80px;
+            margin-bottom: 16px;
+            animation: lockPulse 2.5s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes lockPulse {
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.08) rotate(-5deg);
+            }
+        }
+
+        .lock-overlay h2 {
+            color: #7c2e4f;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .lock-overlay .lock-sub {
+            color: #a04a6b;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 320px;
+            margin-top: 4px;
+        }
+
+        .lock-overlay .lock-date {
+            margin-top: 18px;
+            padding: 8px 24px;
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(236, 72, 153, 0.1));
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #9f2b5e;
+            font-weight: 500;
+            border: 1px solid rgba(244, 114, 182, 0.2);
+        }
+
+        .lock-overlay .lock-message {
+            margin-top: 16px;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin: 0 auto 14px;
+        }
+
+        .avatar-wrapper::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f06292, #ec407a, #f8bbd0);
+            opacity: 0.3;
+            animation: spinGlow 6s linear infinite;
+        }
+
+        @keyframes spinGlow {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, #f8bbd0, #f06292);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 58px;
+            box-shadow: 0 8px 32px rgba(244, 114, 182, 0.35);
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .avatar:active {
+            transform: scale(0.92);
+        }
+
+        .avatar-crown {
+            position: absolute;
+            top: -18px;
+            right: -10px;
+            font-size: 32px;
+            z-index: 3;
+            filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.4));
+            animation: crownFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes crownFloat {
+            0%,
+            100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-5px) rotate(5deg);
+            }
+        }
+
+        .ten-me {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: #7c2e4f;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 12px rgba(255, 150, 200, 0.25);
+            margin-top: 2px;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, #7c2e4f, #c2185b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sub-ten {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #b85c7a;
+            background: rgba(255, 240, 245, 0.6);
+            display: inline-block;
+            padding: 4px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255, 200, 210, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .thiep-noi-dung {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 22px 18px 26px;
+            box-shadow: inset 0 1px 12px rgba(255, 255, 255, 0.6), 0 8px 24px rgba(200, 80, 120, 0.06);
+            border: 1px solid rgba(255, 220, 230, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .loi-chuc {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #6b2145;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            word-break: break-word;
+        }
+
+        .loi-chuc small {
+            display: block;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #a04a6b;
+            margin-top: 6px;
+            opacity: 0.85;
+        }
+
+        .diem-nhan {
+            font-size: 1.2rem;
+            color: #b3416b;
+            background: linear-gradient(135deg, rgba(255, 220, 230, 0.5), rgba(255, 200, 210, 0.3));
+            padding: 8px 18px;
+            border-radius: 60px;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 200, 210, 0.25);
+            margin: 4px 0 10px;
+            font-weight: 500;
+        }
+
+        .ngay-thang {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #a04a6b;
+            background: rgba(255, 220, 230, 0.2);
+            padding: 6px 18px;
+            border-radius: 40px;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+            margin: 2px 0 6px;
+            border: 1px solid rgba(255, 200, 210, 0.15);
+            letter-spacing: 1px;
+        }
+
+        .dong-ho {
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: #6b2145;
+            letter-spacing: 8px;
+            background: rgba(255, 240, 245, 0.2);
+            padding: 6px 8px;
+            border-radius: 80px;
+            backdrop-filter: blur(4px);
+            font-variant-numeric: tabular-nums;
+            margin: 4px 0 8px;
+            border-bottom: 2px solid rgba(200, 80, 120, 0.1);
+            font-family: 'Courier New', monospace;
+        }
+
+        .nut-chuc {
+            background: linear-gradient(135deg, #f06292, #ec407a);
+            border: none;
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 60px;
+            box-shadow: 0 8px 28px rgba(236, 72, 153, 0.4);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            width: 100%;
+            max-width: 220px;
+            margin: 14px auto 4px;
+            display: block;
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            touch-action: manipulation;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nut-chuc::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .nut-chuc:active::before {
+            transform: rotate(45deg) translateX(100%);
+        }
+
+        .nut-chuc:active {
+            transform: scale(0.94);
+            box-shadow: 0 4px 16px rgba(236, 72, 153, 0.3);
+        }
+
+        .nut-chuc:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: rgba(240, 98, 146, 0.12);
+            border: 1px solid rgba(200, 80, 120, 0.15);
+            color: #7c2e4f;
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            touch-action: manipulation;
+            backdrop-filter: blur(4px);
+            width: 100%;
+            max-width: 200px;
+            margin: 6px auto;
+            display: block;
+        }
+
+        .btn-secondary:active {
+            transform: scale(0.94);
+            background: rgba(240, 98, 146, 0.2);
+        }
+
+        .btn-secondary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary.view-only {
+            background: linear-gradient(135deg, rgba(240, 98, 146, 0.2), rgba(236, 72, 153, 0.15));
+            border-color: #f06292;
+            color: #7c2e4f;
+            font-weight: 700;
+        }
+
+        .btn-secondary.view-only:active {
+            background: rgba(240, 98, 146, 0.3);
+        }
+
+        .footer-chuc {
+            margin-top: 18px;
+            font-size: 0.9rem;
+            color: #b05a79;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            border-top: 1px solid rgba(255, 180, 200, 0.15);
+            padding-top: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-chuc .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .footer-chuc .user-info span {
+            background: rgba(255, 220, 230, 0.25);
+            padding: 4px 16px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 200, 210, 0.15);
+        }
+
+        .danh-sach-hoa {
+            width: 100%;
+            max-height: 140px;
+            overflow-y: auto;
+            background: rgba(255, 240, 245, 0.2);
+            border-radius: 20px;
+            padding: 8px 12px;
+            margin-top: 4px;
+            border: 1px solid rgba(255, 200, 210, 0.12);
+            scrollbar-width: thin;
+            scrollbar-color: #f06292 transparent;
+        }
+
+        .danh-sach-hoa::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .danh-sach-hoa::-webkit-scrollbar-thumb {
+            background: #f06292;
+            border-radius: 10px;
+        }
+
+        .danh-sach-hoa .item-hoa {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 6px;
+            border-bottom: 1px solid rgba(255, 180, 200, 0.08);
+            font-size: 0.85rem;
+            color: #6b2145;
+        }
+
+        .danh-sach-hoa .item-hoa:last-child {
+            border-bottom: none;
+        }
+
+        .danh-sach-hoa .item-hoa .ten-user {
+            font-weight: 600;
+        }
+
+        .danh-sach-hoa .item-hoa .so-hoa {
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(236, 72, 153, 0.08));
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            color: #9f2b5e;
+            font-size: 0.8rem;
+        }
+
+        .input-user {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+
+        .input-user input {
+            flex: 1;
+            min-width: 120px;
+            padding: 8px 16px;
+            border: 1px solid rgba(200, 80, 120, 0.15);
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            font-size: 0.85rem;
+            color: #6b2145;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-user input:focus {
+            border-color: #f06292;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 0 3px rgba(240, 98, 146, 0.1);
+        }
+
+        .input-user input::placeholder {
+            color: #b85c7a;
+            opacity: 0.5;
+        }
+
+        .input-user input:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-dang-nhap {
+            background: rgba(240, 98, 146, 0.12);
+            border: 1px solid rgba(200, 80, 120, 0.15);
+            color: #7c2e4f;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            touch-action: manipulation;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-dang-nhap:active {
+            transform: scale(0.94);
+            background: rgba(240, 98, 146, 0.2);
+        }
+
+        .btn-dang-nhap:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .toast-message {
+            background: linear-gradient(135deg, rgba(200, 60, 110, 0.92), rgba(180, 40, 90, 0.92));
+            backdrop-filter: blur(12px);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-top: 12px;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(200, 50, 100, 0.25);
+            pointer-events: none;
+            display: inline-block;
+            transform: translateY(8px);
+        }
+
+        .toast-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .empty-message {
+            color: #b85c7a;
+            font-style: italic;
+            font-size: 0.82rem;
+            padding: 6px 0;
+        }
+
+        .section-title {
+            width: 100%;
+            font-weight: 600;
+            color: #7c2e4f;
+            margin-top: 2px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: "🌸";
+            font-size: 0.7rem;
+            opacity: 0.4;
+        }
+
+        /* ===== FORM LỜI CHÚC ===== */
+        .form-loi-chuc {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 24px 20px 28px;
+            margin-top: 12px;
+            border: 1px solid rgba(255, 220, 230, 0.3);
+            position: relative;
+            z-index: 10;
+            display: none;
+        }
+
+        .form-loi-chuc.active {
+            display: block;
+            animation: slideDown 0.4s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-loi-chuc .btn-back {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            background: rgba(200, 80, 120, 0.1);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #7c2e4f;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+        }
+
+        .form-loi-chuc .btn-back:active {
+            transform: scale(0.92);
+            background: rgba(200, 80, 120, 0.2);
+        }
+
+        .form-loi-chuc h3 {
+            color: #7c2e4f;
+            font-size: 1.2rem;
+            margin-bottom: 14px;
+            margin-top: 8px;
+        }
+
+        .form-loi-chuc textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px 16px;
+            border: 1px solid rgba(200, 80, 120, 0.15);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(4px);
+            font-size: 0.95rem;
+            color: #6b2145;
+            outline: none;
+            transition: all 0.3s ease;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .form-loi-chuc textarea:focus {
+            border-color: #f06292;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 0 3px rgba(240, 98, 146, 0.1);
+        }
+
+        .form-loi-chuc textarea::placeholder {
+            color: #b85c7a;
+            opacity: 0.5;
+        }
+
+        .form-loi-chuc .btn-gui-loi {
+            background: linear-gradient(135deg, #f06292, #ec407a);
+            border: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 60px;
+            box-shadow: 0 8px 28px rgba(236, 72, 153, 0.3);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 12px;
+            width: 100%;
+            max-width: 200px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            touch-action: manipulation;
+        }
+
+        .form-loi-chuc .btn-gui-loi:active {
+            transform: scale(0.94);
+        }
+
+        .form-loi-chuc .btn-gui-loi:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ===== DANH SÁCH LỜI CHÚC ===== */
+        .danh-sach-loi-chuc {
+            width: 100%;
+            max-height: 250px;
+            overflow-y: auto;
+            background: rgba(255, 240, 245, 0.15);
+            border-radius: 20px;
+            padding: 8px 12px;
+            margin-top: 8px;
+            border: 1px solid rgba(255, 200, 210, 0.12);
+            scrollbar-width: thin;
+            scrollbar-color: #f06292 transparent;
+            text-align: left;
+        }
+
+        .danh-sach-loi-chuc::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .danh-sach-loi-chuc::-webkit-scrollbar-track {
+            background: rgba(255, 200, 210, 0.05);
+            border-radius: 10px;
+        }
+
+        .danh-sach-loi-chuc::-webkit-scrollbar-thumb {
+            background: #f06292;
+            border-radius: 10px;
+        }
+
+        .danh-sach-loi-chuc::-webkit-scrollbar-thumb:hover {
+            background: #ec407a;
+        }
+
+        .item-loi-chuc {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 180, 200, 0.08);
+            font-size: 0.9rem;
+            color: #6b2145;
+            transition: background 0.2s ease;
+        }
+
+        .item-loi-chuc:hover {
+            background: rgba(255, 200, 210, 0.05);
+        }
+
+        .item-loi-chuc:last-child {
+            border-bottom: none;
+        }
+
+        .item-loi-chuc .user-name {
+            font-weight: 700;
+            color: #9f2b5e;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .item-loi-chuc .user-name .time-stamp {
+            font-weight: 400;
+            font-size: 0.7rem;
+            color: #b85c7a;
+            opacity: 0.6;
+        }
+
+        .item-loi-chuc .user-message {
+            margin-top: 4px;
+            font-size: 0.95rem;
+            color: #4a2a3a;
+            line-height: 1.5;
+            word-break: break-word;
+            padding-left: 4px;
+        }
+
+        .loi-chuc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0 8px 0;
+            border-bottom: 2px solid rgba(255, 180, 200, 0.15);
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .loi-chuc-header .count {
+            font-size: 0.8rem;
+            color: #b85c7a;
+            background: rgba(255, 200, 210, 0.2);
+            padding: 2px 12px;
+            border-radius: 20px;
+        }
+
+        .btn-close-list {
+            background: rgba(200, 80, 120, 0.1);
+            border: none;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #7c2e4f;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+        }
+
+        .btn-close-list:active {
+            transform: scale(0.92);
+            background: rgba(200, 80, 120, 0.2);
+        }
+
+        @media (max-width: 420px) {
+            .card {
+                padding: 20px 14px 24px;
+                border-radius: 36px;
+            }
+            .lock-overlay {
+                border-radius: 36px;
+                padding: 30px 20px;
+            }
+            .avatar {
+                width: 90px;
+                height: 90px;
+                font-size: 48px;
+            }
+            .avatar-crown {
+                font-size: 26px;
+                top: -14px;
+                right: -6px;
+            }
+            .ten-me {
+                font-size: 1.7rem;
+            }
+            .loi-chuc {
+                font-size: 1.2rem;
+            }
+            .dong-ho {
+                font-size: 2.2rem;
+                letter-spacing: 6px;
+            }
+            .nut-chuc {
+                font-size: 1rem;
+                padding: 12px 18px;
+                max-width: 180px;
+            }
+            .input-user input {
+                min-width: 100px;
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            .lock-overlay h2 {
+                font-size: 1.6rem;
+            }
+            .lock-overlay .lock-icon {
+                font-size: 60px;
+            }
+            .btn-secondary {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+            .form-loi-chuc {
+                padding: 18px 14px 20px;
+            }
+            .form-loi-chuc textarea {
+                min-height: 80px;
+                font-size: 0.9rem;
+            }
+            .danh-sach-loi-chuc {
+                max-height: 200px;
+            }
+            .loi-chuc-header {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .card {
+                padding: 16px 10px 20px;
+                border-radius: 28px;
+            }
+            .lock-overlay {
+                border-radius: 28px;
+                padding: 24px 16px;
+            }
+            .loi-chuc {
+                font-size: 1.05rem;
+            }
+            .dong-ho {
+                font-size: 1.8rem;
+                letter-spacing: 4px;
+            }
+            .ten-me {
+                font-size: 1.4rem;
+            }
+            .danh-sach-loi-chuc {
+                max-height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="fireworkCanvas"></canvas>
+
+    <div class="card" id="cardContainer">
+
+        <div class="lock-overlay hidden" id="lockOverlay">
+            <div class="lock-icon">🔒</div>
+            <h2>🌸 Thiệp đã đóng 🌸</h2>
+            <div class="lock-message">💝</div>
+            <p class="lock-sub">
+                Cảm ơn mọi người đã gửi những lời chúc<br>
+                và bông hoa tươi thắm đến Mẹ!
+            </p>
+            <p style="font-size: 0.95rem; color: #b85c7a; margin-top: 4px;">
+                Mẹ rất vui vì những tình cảm ấm áp này
+            </p>
+            <div class="lock-date">📅 Hết hạn: 11/08/2026</div>
+        </div>
+
+        <div class="avatar-wrapper">
+            <div class="avatar" id="avatarMe">🌷</div>
+            <div class="avatar-crown">👑</div>
+        </div>
+
+        <h1 class="ten-me" id="tenMe">MẸ NGỌC BÉ</h1>
+        <div class="sub-ten" id="subTen">✨ 10.08.2026 ✨</div>
+
+        <div class="thiep-noi-dung">
+            <div class="loi-chuc" id="loiChuc">
+                Chúc mẹ tuổi mới thật nhiều niềm vui 💖
+                <small>Con yêu mẹ nhất trên đời!</small>
+            </div>
+
+            <div class="diem-nhan" id="diemNhan">
+                🌸 Hôm nay là ngày của mẹ 🌸
+            </div>
+
+            <div class="ngay-thang" id="ngayThang">
+                Thứ Hai, 10 tháng 8, 2026
+            </div>
+
+            <div class="dong-ho" id="dongHo">
+                00:00:00
+            </div>
+
+            <button class="nut-chuc" id="nutChucMung">
+                💐 Tặng hoa cho mẹ
+            </button>
+
+            <button class="btn-secondary" id="btnGuiLoiChuc">
+                💌 Gửi lời chúc
+            </button>
+
+            <button class="btn-secondary" id="btnXemLoiChuc">
+                📖 Xem các lời chúc
+            </button>
+
+            <!-- FORM GỬI LỜI CHÚC -->
+            <div class="form-loi-chuc" id="formLoiChuc">
+                <button class="btn-back" id="btnBackForm">⬅ Quay lại</button>
+                <h3>💌 Viết lời chúc</h3>
+                <textarea id="txtLoiChuc" placeholder="Nhập lời chúc của bạn..." maxlength="500"></textarea>
+                <button class="btn-gui-loi" id="btnGuiLoi">💝 Gửi</button>
+            </div>
+
+            <!-- DANH SÁCH LỜI CHÚC -->
+            <div class="danh-sach-loi-chuc hidden" id="danhSachLoiChuc">
+                <div class="loi-chuc-header">
+                    <span style="font-weight:600;color:#7c2e4f;">💌 Xem lời chúc đã gửi</span>
+                    <span class="count" id="soLuongLoiChuc">0 lời chúc</span>
+                    <button class="btn-close-list" id="btnCloseList">✕ Đóng</button>
+                </div>
+                <div id="loiChucContent">
+                    <div style="text-align:center;color:#b85c7a;padding:8px;font-style:italic;font-size:0.85rem;">Chưa có lời chúc nào...</div>
+                </div>
+            </div>
+
+            <div class="toast-message" id="toastThongBao">
+                🌹 Mẹ nhận được hoa rồi ạ!
+            </div>
+        </div>
+
+        <div class="footer-chuc">
+            <div class="user-info">
+                <span>❤️ Chúc mừng sinh nhật Mẹ ❤️</span>
+                <div class="input-user">
+                    <input type="text" id="inputTenUser" placeholder="Nhập tên của bạn..." maxlength="30">
+                    <button class="btn-dang-nhap" id="btnDangNhap">👤 Đăng nhập</button>
+                </div>
+            </div>
+
+            <div class="section-title">🌺 Danh sách người tặng hoa</div>
+            <div class="danh-sach-hoa" id="danhSachHoa">
+                <div class="empty-message">Chưa có ai tặng hoa...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        "use strict";
+
+        // ⚠️ DÁN URL BẠN NHẬN ĐƯỢC Ở BƯỚC 2 VÀO ĐÂY
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzRo5ap89sHR_Oa179Pm7GGDzeVNI8OycmwNy8YokN8rKNLkrvYxbOkvR09vj7u_xsr1A/exec";
+
+        // ============================================
+        // 1. HỆ THỐNG PHÁO HOA & CONFETTI
+        // ============================================
+        const canvas = document.getElementById('fireworkCanvas');
+        const ctx = canvas.getContext('2d');
+        let W, H;
+
+        function resizeCanvas() {
+            W = window.innerWidth;
+            H = window.innerHeight;
+            canvas.width = W;
+            canvas.height = H;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor(x, y, color, velocity, size, life, type = 'circle') {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.velocity = velocity;
+                this.size = size || 4;
+                this.life = life || 1;
+                this.maxLife = this.life;
+                this.type = type;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotationSpeed = (Math.random() - 0.5) * 0.2;
+                this.width = Math.random() * 6 + 4;
+                this.height = Math.random() * 4 + 2;
+                this.shape = Math.random() > 0.5 ? 'rect' : 'diamond';
+            }
+
+            update() {
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.velocity.y += 0.04;
+                this.velocity.x *= 0.99;
+                this.velocity.y *= 0.99;
+                this.life -= 0.01;
+                this.rotation += this.rotationSpeed;
+                return this.life > 0;
+            }
+
+            draw(ctx) {
+                const alpha = Math.max(0, this.life / this.maxLife);
+                const size = this.size * (0.3 + 0.7 * (this.life / this.maxLife));
+
+                ctx.save();
+                ctx.globalAlpha = alpha;
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+
+                if (this.type === 'confetti') {
+                    ctx.fillStyle = this.color;
+                    if (this.shape === 'rect') {
+                        ctx.fillRect(-this.width / 2, -this.height / 2, this.width, this.height);
+                    } else {
+                        ctx.beginPath();
+                        ctx.moveTo(0, -this.height / 2);
+                        ctx.lineTo(this.width / 2, 0);
+                        ctx.lineTo(0, this.height / 2);
+                        ctx.lineTo(-this.width / 2, 0);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+                } else if (this.type === 'star') {
+                    ctx.fillStyle = this.color;
+                    const spikes = 5;
+                    const outerRadius = size;
+                    const innerRadius = size * 0.4;
+                    ctx.beginPath();
+                    for (let i = 0; i < spikes * 2; i++) {
+                        const radius = i % 2 === 0 ? outerRadius : innerRadius;
+                        const angle = (i * Math.PI) / spikes - Math.PI / 2;
+                        const x = Math.cos(angle) * radius;
+                        const y = Math.sin(angle) * radius;
+                        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+                    }
+                    ctx.closePath();
+                    ctx.fill();
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+
+                ctx.restore();
+            }
+        }
+
+        let particles = [];
+
+        function createFirework(x, y) {
+            const colors = [
+                '#FF6B6B', '#FF9F43', '#FECA57', '#48DBFB',
+                '#FF6BCB', '#A29BFE', '#FD79A8', '#00B894',
+                '#FDCB6E', '#E17055', '#6C5CE7', '#00CEC9',
+                '#FF7675', '#FDCB6E', '#55EFC4', '#FDA7DF'
+            ];
+
+            const numParticles = 80 + Math.floor(Math.random() * 60);
+            const color1 = colors[Math.floor(Math.random() * colors.length)];
+            const color2 = colors[Math.floor(Math.random() * colors.length)];
+            const color3 = colors[Math.floor(Math.random() * colors.length)];
+
+            for (let i = 0; i < numParticles; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 2 + Math.random() * 5;
+                const color = [color1, color2, color3][Math.floor(Math.random() * 3)];
+                const size = 2 + Math.random() * 5;
+                const life = 1 + Math.random() * 0.5;
+
+                let type = 'circle';
+                const rand = Math.random();
+                if (rand < 0.3) type = 'confetti';
+                else if (rand < 0.15) type = 'star';
+
+                particles.push(new Particle(
+                    x, y,
+                    color,
+                    { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed - 1 },
+                    size,
+                    life,
+                    type
+                ));
+            }
+
+            for (let i = 0; i < 20; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 6 + Math.random() * 8;
+                particles.push(new Particle(
+                    x, y,
+                    '#FFFFFF',
+                    { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed - 2 },
+                    1 + Math.random() * 2,
+                    0.5 + Math.random() * 0.3,
+                    'circle'
+                ));
+            }
+        }
+
+        function createFireworksBurst(count = 5) {
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const x = 50 + Math.random() * (W - 100);
+                    const y = 50 + Math.random() * (H * 0.6);
+                    createFirework(x, y);
+                }, i * 150);
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, W, H);
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                const alive = p.update();
+                if (alive) {
+                    p.draw(ctx);
+                } else {
+                    particles.splice(i, 1);
+                }
+            }
+
+            if (particles.length > 0) {
+                requestAnimationFrame(animateParticles);
+            }
+        }
+
+        function triggerFireworks() {
+            particles = [];
+            const count = 3 + Math.floor(Math.random() * 3);
+            createFireworksBurst(count);
+            if (particles.length > 0) {
+                animateParticles();
+            }
+        }
+
+        // ============================================
+        // 2. LOGIC THIỆP & KẾT NỐI GOOGLE SHEETS
+        // ============================================
+        const TEN_ME = "MẸ NGỌC BÉ";
+        const NGAY_SINH = new Date(2026, 7, 10);
+        const NGAY_KET_THUC = new Date(2026, 7, 11);
+
+        const cardContainer = document.getElementById('cardContainer');
+        const lockOverlay = document.getElementById('lockOverlay');
+        const tenMeEl = document.getElementById('tenMe');
+        const subTenEl = document.getElementById('subTen');
+        const loiChucEl = document.getElementById('loiChuc');
+        const dongHoEl = document.getElementById('dongHo');
+        const diemNhanEl = document.getElementById('diemNhan');
+        const ngayThangEl = document.getElementById('ngayThang');
+        const nutChuc = document.getElementById('nutChucMung');
+        const toastEl = document.getElementById('toastThongBao');
+        const avatarEl = document.getElementById('avatarMe');
+        const danhSachHoaEl = document.getElementById('danhSachHoa');
+        const inputTenUser = document.getElementById('inputTenUser');
+        const btnDangNhap = document.getElementById('btnDangNhap');
+        const btnGuiLoiChuc = document.getElementById('btnGuiLoiChuc');
+        const btnXemLoiChuc = document.getElementById('btnXemLoiChuc');
+        const formLoiChuc = document.getElementById('formLoiChuc');
+        const btnBackForm = document.getElementById('btnBackForm');
+        const txtLoiChuc = document.getElementById('txtLoiChuc');
+        const btnGuiLoi = document.getElementById('btnGuiLoi');
+        const danhSachLoiChucEl = document.getElementById('danhSachLoiChuc');
+        const loiChucContent = document.getElementById('loiChucContent');
+        const soLuongLoiChuc = document.getElementById('soLuongLoiChuc');
+        const btnCloseList = document.getElementById('btnCloseList');
+
+        let currentUser = '';
+        let danhSachNguoiTang = {};
+        let danhSachLoiChuc = [];
+        let isLocked = false;
+        let isFormOpen = false;
+        let isViewingMessages = false;
+
+        // Tải dữ liệu toàn bộ từ Google Sheets
+        function loadAllDataFromSheet() {
+            if (SCRIPT_URL === "DÁN_URL_WEB_APP_GOOGLE_CỦA_BẠN_VÀO_ĐÂY") {
+                console.error("Vui lòng thay thế SCRIPT_URL bằng URL Google Apps Script của bạn.");
+                return;
+            }
+            fetch(SCRIPT_URL)
+                .then(res => res.json())
+                .then(data => {
+                    danhSachLoiChuc = data.loiChuc || [];
+                    danhSachNguoiTang = data.hoa || {};
+                    renderDanhSach();
+                    renderLoiChuc();
+                    if (currentUser && danhSachNguoiTang[currentUser] !== undefined) {
+                        const soHoaHienTai = danhSachNguoiTang[currentUser] || 0;
+                        const hoaHong = ['🌹', '🌷', '🌸', '🌺', '🌼', '💐', '🌻'];
+                        const iconHoa = hoaHong[soHoaHienTai % hoaHong.length];
+                        nutChuc.textContent = `${iconHoa} Tặng hoa (${soHoaHienTai})`;
+                    }
+                })
+                .catch(err => console.error("Lỗi khi tải dữ liệu từ Sheets:", err));
+        }
+
+        function renderLoiChuc() {
+            if (!loiChucContent) return;
+
+            if (soLuongLoiChuc) {
+                soLuongLoiChuc.textContent = `${danhSachLoiChuc.length} lời chúc`;
+            }
+
+            if (danhSachLoiChuc.length === 0) {
+                loiChucContent.innerHTML =
+                    '<div style="text-align:center;color:#b85c7a;padding:8px;font-style:italic;font-size:0.85rem;">Chưa có lời chúc nào...</div>';
+                return;
+            }
+
+            let html = '';
+            const reversed = [...danhSachLoiChuc].reverse();
+            for (const item of reversed) {
+                const time = item.time ? new Date(item.time).toLocaleString('vi-VN') : '';
+                html += `
+                    <div class="item-loi-chuc">
+                        <div class="user-name">
+                            💝 Lời chúc của ${item.user}
+                            <span class="time-stamp">${time}</span>
+                        </div>
+                        <div class="user-message">${item.message}</div>
+                    </div>
+                `;
+            }
+            loiChucContent.innerHTML = html;
+        }
+
+        function guiLoiChuc() {
+            if (isLocked) {
+                showToast('🔒 Thiệp đã đóng! Cảm ơn bạn đã tham gia.');
+                return;
+            }
+            if (!currentUser) {
+                showToast('⚠️ Vui lòng đăng nhập trước khi gửi lời chúc!');
+                return;
+            }
+            const message = txtLoiChuc.value.trim();
+            if (!message) {
+                showToast('⚠️ Vui lòng nhập lời chúc!');
+                return;
+            }
+            if (message.length > 500) {
+                showToast('⚠️ Lời chúc quá dài! (tối đa 500 ký tự)');
+                return;
+            }
+
+            btnGuiLoi.disabled = true;
+            btnGuiLoi.textContent = "⏳ Đang gửi...";
+
+            const payload = {
+                action: "guiLoiChuc",
+                user: currentUser,
+                message: message,
+                time: new Date().toISOString()
+            };
+
+            fetch(SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
+                btnGuiLoi.disabled = false;
+                btnGuiLoi.textContent = "💝 Gửi";
+                txtLoiChuc.value = '';
+                showToast(`💝 ${currentUser} đã gửi lời chúc!`);
+                triggerFireworks();
+                closeForm();
+                loadAllDataFromSheet();
+                showLoiChucList();
+            })
+            .catch(err => {
+                btnGuiLoi.disabled = false;
+                btnGuiLoi.textContent = "💝 Gửi";
+                showToast("❌ Lỗi kết nối, vui lòng thử lại!");
+            });
+        }
+
+        function openForm() {
+            if (isLocked) {
+                showToast('🔒 Thiệp đã đóng! Cảm ơn bạn đã tham gia.');
+                return;
+            }
+            if (!currentUser) {
+                showToast('⚠️ Vui lòng đăng nhập trước khi gửi lời chúc!');
+                return;
+            }
+            formLoiChuc.classList.add('active');
+            isFormOpen = true;
+            danhSachLoiChucEl.classList.add('hidden');
+            isViewingMessages = false;
+            txtLoiChuc.focus();
+        }
+
+        function closeForm() {
+            formLoiChuc.classList.remove('active');
+            isFormOpen = false;
+        }
+
+        function showLoiChucList() {
+            closeForm();
+            danhSachLoiChucEl.classList.toggle('hidden');
+            isViewingMessages = !isViewingMessages;
+            if (!danhSachLoiChucEl.classList.contains('hidden')) {
+                renderLoiChuc();
+                danhSachLoiChucEl.scrollTop = 0;
+            }
+        }
+
+        function checkLockStatus() {
+            const now = new Date();
+            if (now >= NGAY_KET_THUC) {
+                isLocked = true;
+                lockOverlay.classList.remove('hidden');
+
+                nutChuc.disabled = true;
+                inputTenUser.disabled = true;
+                btnDangNhap.disabled = true;
+                btnGuiLoiChuc.disabled = true;
+                btnGuiLoi.disabled = true;
+                txtLoiChuc.disabled = true;
+
+                btnXemLoiChuc.disabled = false;
+                btnXemLoiChuc.classList.add('view-only');
+                formLoiChuc.classList.remove('active');
+
+                return true;
+            }
+            return false;
+        }
+
+        function renderDanhSach() {
+            if (!danhSachHoaEl) return;
+            const keys = Object.keys(danhSachNguoiTang);
+            keys.sort((a, b) => danhSachNguoiTang[b] - danhSachNguoiTang[a]);
+            if (keys.length === 0) {
+                danhSachHoaEl.innerHTML = '<div class="empty-message">Chưa có ai tặng hoa...</div>';
+                return;
+            }
+            let html = '';
+            for (const ten of keys) {
+                const soHoa = danhSachNguoiTang[ten] || 0;
+                const isCurrentUser = ten === currentUser;
+                html += `
+                    <div class="item-hoa" style="${isCurrentUser ? 'background: rgba(244,114,182,0.08); border-radius: 8px;' : ''}">
+                        <span class="ten-user">${ten} ${isCurrentUser ? '👈' : ''}</span>
+                        <span class="so-hoa">${soHoa} 🌸</span>
+                    </div>
+                `;
+            }
+            danhSachHoaEl.innerHTML = html;
+        }
+
+        function tangHoa() {
+            if (isLocked) {
+                showToast('🔒 Thiệp đã đóng! Cảm ơn bạn đã tham gia.');
+                return;
+            }
+            if (!currentUser) {
+                showToast('⚠️ Vui lòng đăng nhập tên trước khi tặng hoa!');
+                return;
+            }
+
+            nutChuc.disabled = true;
+
+            const payload = {
+                action: "tangHoa",
+                user: currentUser
+            };
+
+            fetch(SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
+                nutChuc.disabled = false;
+                danhSachNguoiTang[currentUser] = data.count;
+                renderDanhSach();
+                triggerFireworks();
+
+                const hoaHong = ['🌹', '🌷', '🌸', '🌺', '🌼', '💐', '🌻'];
+                const iconHoa = hoaHong[danhSachNguoiTang[currentUser] % hoaHong.length];
+                nutChuc.textContent = `${iconHoa} Tặng hoa (${danhSachNguoiTang[currentUser]})`;
+
+                showToast(`💐 ${currentUser} vừa tặng hoa cho mẹ! (Tổng: ${danhSachNguoiTang[currentUser]} 🌸)`);
+
+                if (navigator.vibrate) navigator.vibrate(30);
+
+                if (loiChucEl) {
+                    const cacLoiChucChinh = [
+                        "🌷 Mẹ ơi, con yêu mẹ vô bờ bến!",
+                        "🌸 Mẹ là nguồn cảm hứng lớn nhất đời con!",
+                        "🌺 Chúc mẹ sống lâu trăm tuổi, an khang thịnh vượng!",
+                        "🌹 Mẹ đẹp tựa đóa hồng rực rỡ!",
+                        "💖 Mẹ là điều tuyệt vời nhất con có!",
+                        "✨ Con tự hào vì được làm con của mẹ!",
+                        "🌻 Mẹ là mặt trời ấm áp của gia đình!",
+                        "💐 Chúc mẹ luôn tươi trẻ và yêu đời!",
+                        "🌟 Mẹ là ngôi sao sáng nhất trong tim con!",
+                        "🌈 Cuộc đời con có mẹ là hạnh phúc nhất!",
+                        "🍀 Mẹ mãi là bến đỗ bình yên của con!",
+                        "🎂 Mừng sinh nhật mẹ yêu quý!",
+                        "💝 Con biết ơn mẹ vì tất cả!",
+                        "🌸 Mẹ là đóa hoa không bao giờ tàn!",
+                        "🌺 Tuổi mới của mẹ sẽ tràn ngập niềm vui!",
+                        "🌷 Mẹ ơi, con thương mẹ nhiều lắm!",
+                        "✨ Mẹ là ánh sáng soi đường cho con!",
+                        "💖 Mẹ là số một trong trái tim con!",
+                        "🌹 Mẹ đẹp nhất trong mắt con!",
+                        "🌻 Chúc mẹ luôn khỏe mạnh và hạnh phúc!"
+                    ];
+                    const loiMoi = cacLoiChucChinh[Math.floor(Math.random() * cacLoiChucChinh.length)];
+                    const cauPhuNho = [
+                        "❤️ con yêu mẹ ❤️", "💝 mẹ là cả thế giới", "🌷 mẹ ơi thương mẹ",
+                        "🌸 con nhớ mẹ", "💖 mẹ là số một", "🌟 mẹ là thiên thần",
+                        "🌺 mẹ đẹp nhất", "🍀 mẹ là bình an", "✨ con tự hào vì mẹ", "🌹 mẹ là hoa hồng"
+                    ];
+                    const phuNho = cauPhuNho[Math.floor(Math.random() * cauPhuNho.length)];
+                    loiChucEl.innerHTML = `${loiMoi} <small>${phuNho}</small>`;
+                }
+
+                if (avatarEl) {
+                    avatarEl.style.transition = 'transform 0.2s ease';
+                    avatarEl.style.transform = 'scale(1.15)';
+                    setTimeout(() => avatarEl.style.transform = 'scale(1)', 250);
+                    const hoaList = ['🌷', '🌸', '🌺', '🌹', '🌼', '💐', '🌻'];
+                    avatarEl.textContent = hoaList[Math.floor(Math.random() * hoaList.length)];
+                }
+            })
+            .catch(err => {
+                nutChuc.disabled = false;
+                showToast("❌ Lỗi kết nối, vui lòng thử lại!");
+            });
+        }
+
+        function showToast(message) {
+            if (toastEl) {
+                toastEl.textContent = message;
+                toastEl.classList.add('show');
+                clearTimeout(window.toastTimeout);
+                window.toastTimeout = setTimeout(() => {
+                    toastEl.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        function dangNhap() {
+            if (isLocked) {
+                showToast('🔒 Thiệp đã đóng! Cảm ơn bạn đã tham gia.');
+                return;
+            }
+            const ten = inputTenUser.value.trim();
+            if (!ten) {
+                showToast('⚠️ Vui lòng nhập tên của bạn!');
+                return;
+            }
+            if (ten.length > 30) {
+                showToast('⚠️ Tên quá dài! (tối đa 30 ký tự)');
+                return;
+            }
+
+            currentUser = ten;
+            const soHoaHienTai = danhSachNguoiTang[currentUser] || 0;
+            renderDanhSach();
+            const hoaHong = ['🌹', '🌷', '🌸', '🌺', '🌼', '💐', '🌻'];
+            const iconHoa = hoaHong[soHoaHienTai % hoaHong.length];
+            nutChuc.textContent = `${iconHoa} Tặng hoa (${soHoaHienTai})`;
+            
+            showToast(`👋 Chào ${currentUser}! Số hoa hiện tại: ${soHoaHienTai} 🌸`);
+            inputTenUser.value = '';
+            inputTenUser.disabled = true;
+            btnDangNhap.disabled = true;
+            btnDangNhap.textContent = '✅ Đã đăng nhập';
+            btnGuiLoiChuc.disabled = false;
+            btnXemLoiChuc.disabled = false;
+        }
+
+        // ============================================
+        // 3. KHỞI TẠO
+        // ============================================
+        function init() {
+            checkLockStatus();
+
+            if (tenMeEl) tenMeEl.textContent = TEN_ME;
+
+            function formatNgayThang(date) {
+                const thu = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+                const ngay = date.getDate();
+                const thang = date.getMonth() + 1;
+                const nam = date.getFullYear();
+                return `${thu[date.getDay()]}, ${ngay} tháng ${thang}, ${nam}`;
+            }
+
+            function capNhatNgayThang() {
+                if (ngayThangEl) {
+                    ngayThangEl.textContent = formatNgayThang(NGAY_SINH);
+                }
+                if (subTenEl) {
+                    const ngay = String(NGAY_SINH.getDate()).padStart(2, '0');
+                    const thang = String(NGAY_SINH.getMonth() + 1).padStart(2, '0');
+                    const nam = NGAY_SINH.getFullYear();
+                    subTenEl.textContent = `✨ ${ngay}.${thang}.${nam} ✨`;
+                }
+            }
+            capNhatNgayThang();
+
+            // Tải dữ liệu từ Google Sheets
+            loadAllDataFromSheet();
+            
+            // Cập nhật dữ liệu từ Google Sheets tự động mỗi 10 giây
+            setInterval(loadAllDataFromSheet, 10000);
+
+            if (isLocked) {
+                btnGuiLoiChuc.disabled = true;
+                btnXemLoiChuc.disabled = false;
+                btnXemLoiChuc.classList.add('view-only');
+            } else {
+                btnGuiLoiChuc.disabled = false;
+                btnXemLoiChuc.disabled = false;
+            }
+
+            function capNhatDongHoVaCau() {
+                const now = new Date();
+                const gio = String(now.getHours()).padStart(2, '0');
+                const phut = String(now.getMinutes()).padStart(2, '0');
+                const giay = String(now.getSeconds()).padStart(2, '0');
+                if (dongHoEl) {
+                    dongHoEl.textContent = `${gio}:${phut}:${giay}`;
+                }
+
+                if (diemNhanEl) {
+                    const cacCauChucPhu = [
+                        "🌸 Mẹ là đóa hoa đẹp nhất!", "🌺 Tuổi mới rạng ngời!", "🌷 Mẹ mãi là thanh xuân của con!",
+                        "🌹 Con thương mẹ vô cùng!", "💐 Mẹ ơi, sinh nhật vui vẻ!", "✨ Mẹ là ánh sáng của gia đình!",
+                        "🍀 Chúc mẹ an lành và may mắn!", "🎂 Hôm nay là ngày của mẹ!", "💖 Mẹ là số một trong tim con!",
+                        "🌟 Mẹ là ngôi sao sáng nhất!", "🌈 Mẹ là cầu vồng của con!", "🌻 Mẹ là mặt trời ấm áp!"
+                    ];
+                    diemNhanEl.textContent = cacCauChucPhu[now.getSeconds() % cacCauChucPhu.length];
+                }
+
+                if (avatarEl) {
+                    const icons = ['🌷', '🌸', '🌺', '🌹', '🌼', '💐', '🌻'];
+                    avatarEl.textContent = icons[now.getMinutes() % icons.length];
+                }
+            }
+
+            capNhatDongHoVaCau();
+            setInterval(capNhatDongHoVaCau, 1000);
+
+            // ----- BẮT SỰ KIỆN -----
+            nutChuc.addEventListener('click', function(e) {
+                e.preventDefault();
+                tangHoa();
+            });
+
+            btnDangNhap.addEventListener('click', function(e) {
+                e.preventDefault();
+                dangNhap();
+            });
+
+            inputTenUser.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    dangNhap();
+                }
+            });
+
+            btnGuiLoiChuc.addEventListener('click', function(e) {
+                e.preventDefault();
+                openForm();
+            });
+
+            btnBackForm.addEventListener('click', function(e) {
+                e.preventDefault();
+                closeForm();
+            });
+
+            btnXemLoiChuc.addEventListener('click', function(e) {
+                e.preventDefault();
+                showLoiChucList();
+            });
+
+            btnCloseList.addEventListener('click', function(e) {
+                e.preventDefault();
+                danhSachLoiChucEl.classList.add('hidden');
+                isViewingMessages = false;
+            });
+
+            btnGuiLoi.addEventListener('click', function(e) {
+                e.preventDefault();
+                guiLoiChuc();
+            });
+
+            txtLoiChuc.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && e.ctrlKey) {
+                    e.preventDefault();
+                    guiLoiChuc();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isFormOpen) {
+                    closeForm();
+                }
+                if (e.key === 'Escape' && !danhSachLoiChucEl.classList.contains('hidden')) {
+                    danhSachLoiChucEl.classList.add('hidden');
+                    isViewingMessages = false;
+                }
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+</script>
+</body>
+</html>
